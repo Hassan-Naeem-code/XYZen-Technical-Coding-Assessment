@@ -1,8 +1,14 @@
 # ninja log v5
-0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
-6	109	1749919415193508016	build.ninja	f446d7f90492f65c
-0	4	0	clean	ac3c63ba023e959c
-0	14	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
-0	1427	1749919427146326187	CMakeFiles/appmodules.dir/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	59eb0831171ac15a
-1	1555	1749919427274570392	CMakeFiles/appmodules.dir/OnLoad.cpp.o	fa4c8152b93e178c
 1555	1716	1749919427439221699	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/intermediates/cxx/Debug/29611r6g/obj/arm64-v8a/libappmodules.so	151ad4e11700c1ff
+0	1427	1749919427146326187	CMakeFiles/appmodules.dir/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	59eb0831171ac15a
+0	5	0	clean	ac3c63ba023e959c
+6	109	1749921079617794058	build.ninja	f446d7f90492f65c
+1	1555	1749919427274570392	CMakeFiles/appmodules.dir/OnLoad.cpp.o	fa4c8152b93e178c
+0	6	1749921079521656000	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
+6	109	1749921079617794058	build.ninja	f446d7f90492f65c
+0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
+0	4	0	clean	ac3c63ba023e959c
+0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
+0	3	0	clean	ac3c63ba023e959c
+0	6	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/arm64-v8a/CMakeFiles/cmake.verify_globs	cd3f806cd0998cd9
+0	4	0	clean	ac3c63ba023e959c
