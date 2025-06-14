@@ -1,0 +1,89 @@
+# Node modules (frontend & backend)
+node_modules/
+
+# Dependency locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output (frontend & backend)
+dist/
+build/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+
+# macOS system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# React Native (frontend)
+android/app/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/.cxx/
+android/.DS_Store
+*.keystore
+*.jks
+*.apk
+*.aab
+
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+ios/.DS_Store
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
+
+# Expo
+.expo/
+.expo-shared/
+
+# Test coverage
+coverage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Misc
+*.tmp
+*.swp
+*.swo
+
+# Backend specific (common for Node.js/Express)
+*.sqlite
+*.sqlite3
+*.db
+*.pid
+
+# Ignore IDE folders
+.idea/
+*.sublime-workspace
+*.sublime-project
