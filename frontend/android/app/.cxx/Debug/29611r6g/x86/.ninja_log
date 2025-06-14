@@ -1,0 +1,5 @@
+# ninja log v5
+0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86/CMakeFiles/cmake.verify_globs	eb3e88e07957ab8f
+0	1095	1749919431509587499	CMakeFiles/appmodules.dir/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	ba899454e2242df9
+0	1213	1749919431628109610	CMakeFiles/appmodules.dir/OnLoad.cpp.o	f64d31612af664be
+1214	1260	1749919431678471816	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/intermediates/cxx/Debug/29611r6g/obj/x86/libappmodules.so	f3b6c23e099630c1

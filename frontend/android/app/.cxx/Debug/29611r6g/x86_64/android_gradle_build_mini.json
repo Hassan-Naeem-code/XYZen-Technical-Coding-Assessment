@@ -1,0 +1,31 @@
+{
+  "buildFiles": [
+    "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/muhammadhassannaeem/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/muhammadhassannaeem/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "appmodules::@6890427a1f51a3e7e1df": {
+      "artifactName": "appmodules",
+      "abi": "x86_64",
+      "output": "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/intermediates/cxx/Debug/29611r6g/obj/x86_64/libappmodules.so",
+      "runtimeFiles": [
+        "/Users/muhammadhassannaeem/.gradle/caches/8.14.1/transforms/e7712c5a52bcb1581dae6b986faf2efa/transformed/jetified-fbjni-0.7.0/prefab/modules/fbjni/libs/android.x86_64/libfbjni.so",
+        "/Users/muhammadhassannaeem/.gradle/caches/8.14.1/transforms/617a9e408b7c150a809aad1d909bc5fd/transformed/jetified-react-android-0.80.0-debug/prefab/modules/jsi/libs/android.x86_64/libjsi.so",
+        "/Users/muhammadhassannaeem/.gradle/caches/8.14.1/transforms/617a9e408b7c150a809aad1d909bc5fd/transformed/jetified-react-android-0.80.0-debug/prefab/modules/reactnative/libs/android.x86_64/libreactnative.so"
+      ]
+    }
+  }
+}

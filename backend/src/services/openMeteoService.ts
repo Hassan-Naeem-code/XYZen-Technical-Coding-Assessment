@@ -14,7 +14,11 @@ export class OpenMeteoService {
             });
             return response.data.current_weather;
         } catch (error) {
-            throw new Error('Error fetching current weather data: ' + error.message);
+            if (error instanceof Error) {
+                throw new Error('Error fetching current weather data: ' + error.message);
+            } else {
+                throw new Error('Error fetching current weather data: Unknown error');
+            }
         }
     }
 
@@ -29,7 +33,11 @@ export class OpenMeteoService {
             });
             return response.data.hourly;
         } catch (error) {
-            throw new Error('Error fetching weather forecast data: ' + error.message);
+            if (error instanceof Error) {
+                throw new Error('Error fetching weather forecast data: ' + error.message);
+            } else {
+                throw new Error('Error fetching weather forecast data: Unknown error');
+            }
         }
     }
 }
