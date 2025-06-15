@@ -1,97 +1,144 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Weather Assistant – React Native Frontend
 
-# Getting Started
+A sleek, modern personal weather assistant app built with **React Native**.  
+It fetches live weather data from the [Open-Meteo API](https://open-meteo.com/) and provides unique weather notifications not found in the default iPhone Weather app.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **Current Weather:** See real-time weather for your location or any city.
+- **Hourly & Daily Forecast:** Modern, animated UI with Lottie and icons.
+- **Manual Location:** Search and set weather for any city.
+- **Interesting Notifications:** Get iOS notifications for unique weather events (e.g., high wind, low visibility, extreme temperatures).
+- **No Login Required:** Just open and use.
+- **iOS & Android Support:** Designed for iPhone emulator, works on Android too.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
+
+## 🛠️ Getting Started
+
+### 1. **Clone the Repository**
 
 ```sh
-# Using npm
-npm start
+git clone <your-repo-url>
+cd frontend
+```
 
-# OR using Yarn
+### 2. **Install Dependencies**
+
+```sh
+npm install
+# or
+yarn install
+```
+
+### 3. **Set Up Environment Variables**
+
+Create a `.env` file in the root with your API base URLs:
+
+```
+GEO_API_URL=https://nominatim.openstreetmap.org
+WEATHER_API_URL=https://api.open-meteo.com/v1
+```
+
+### 4. **iOS Setup**
+
+- Install CocoaPods dependencies:
+  ```sh
+  cd ios && pod install && cd ..
+  ```
+- Enable **Push Notifications** and **Background Modes** in Xcode (for notifications).
+
+### 5. **Start Metro**
+
+```sh
+npm start
+# or
 yarn start
 ```
 
-## Step 2: Build and run your app
+### 6. **Run the App**
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- **iOS:**
+  ```sh
+  npm run ios
+  # or
+  yarn ios
+  ```
+- **Android:**
+  ```sh
+  npm run android
+  # or
+  yarn android
+  ```
 
-### Android
+---
 
-```sh
-# Using npm
-npm run android
+## 📱 Usage
 
-# OR using Yarn
-yarn android
-```
+- **Home:** View current weather and forecast for your location.
+- **Manual Location:** Tap the location icon to search for any city.
+- **Notifications:** Receive alerts for interesting weather events (e.g., "High Wind Alert!").
+- **Pull to Refresh:** Swipe down to refresh weather data.
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 🔔 Notifications
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- The app sends **local iOS notifications** for weather events not covered by the default iPhone Weather app, such as:
+  - High wind speed
+  - Low visibility
+  - Extreme temperatures
+  - High UV index
+  - Heavy rain
+  - Storm warnings
 
-```sh
-bundle install
-```
+---
 
-Then, and every time you update your native dependencies, run:
+## 🧑‍💻 Tech Stack
 
-```sh
-bundle exec pod install
-```
+- **React Native** (TypeScript)
+- **Redux Toolkit** for state management
+- **Open-Meteo API** for weather data
+- **Nominatim API** for geocoding
+- **Lottie** for animations
+- **react-native-push-notification** for notifications
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
+## 📸 Demo
 
-# OR using Yarn
-yarn ios
-```
+- See the demo video in the submission link for a walkthrough of the app and its features.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 📝 Assignment Requirements
 
-## Step 3: Modify your app
+- [x] React Native UI
+- [x] Backend (Open-Meteo API)
+- [x] 2+ pages (Home, Manual Location)
+- [x] iOS notifications for unique weather events
+- [x] iPhone emulator support
+- [x] No login required
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🤝 Contributing
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
+## 📚 Learn More
 
-You've successfully run and modified your React Native App. :partying_face:
+- [React Native Docs](https://reactnative.dev/docs/getting-started)
+- [Open-Meteo API Docs](https://open-meteo.com/en/docs)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Lottie for React Native](https://github.com/lottie-react-native/lottie-react-native)
 
-### Now what?
+---
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 🛡️ License
 
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is for educational/demo purposes.
