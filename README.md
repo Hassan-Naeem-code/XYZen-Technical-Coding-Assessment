@@ -160,7 +160,7 @@ See the demo video in the submission link for a walkthrough of the app and its f
 
 - [x] React Native UI
 - [x] Backend (Open-Meteo API, Node backend)
-- [x] 2+ pages (Home, Manual Location)
+- [x] 3 pages (Home, Manual, Location)
 - [x] iOS notifications for unique weather events
 - [x] iPhone emulator support
 - [x] No login required
