@@ -125,7 +125,8 @@ export default function HomeScreen() {
               );
               return (
                 <Text style={{ color: "#fff", fontSize: 12, marginTop: 2 }}>
-                  {Utils.toFahrenheit(min)} / {Utils.toFahrenheit(max)}
+                  {Utils.toFahrenheit(Number(min))} /{" "}
+                  {Utils.toFahrenheit(Number(max))}
                 </Text>
               );
             })()}
