@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.YELLOW_COLOR,
   },
+  centeredContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.YELLOW_COLOR, // or your app's background color
+  },
   topContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -151,6 +157,11 @@ const styles = StyleSheet.create({
     fontSize: wp(12),
     fontFamily: family.Poppins_Regular,
     color: colors.WHITE,
+  },
+  errorText: {
+    fontSize: wp(12),
+    fontFamily: family.Poppins_Regular,
+    color: colors.ALERT,
   },
 });
 

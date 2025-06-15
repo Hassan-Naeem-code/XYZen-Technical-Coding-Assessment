@@ -13,9 +13,9 @@ import { AppDispatch } from "../../store";
 import { showLoader, hideLoader } from "../../store/slices/loaderSlice";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
-import styles from "./styles";
 import NavService from "../../helpers/NavService";
 import GeoCodeServices from "../../services/geocodeService";
+import styles from "./styles";
 
 const ManualLocation = () => {
   const navigation = useNavigation();

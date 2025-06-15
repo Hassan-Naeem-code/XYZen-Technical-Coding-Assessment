@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import {
   KeyboardAvoidingView,
   View,
@@ -8,13 +8,13 @@ import {
   StyleSheet,
 } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-// import { PersistGate } from "redux-persist/integration/react";
 import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
 import { Provider } from "react-redux";
 import store from "./src/store";
 import Loader from "./src/components/Loader";
 import MainNavigation from "./src/routes";
 import ErrorBoundary from "./src/components/ErrorBoundary";
+import { configureNotifications } from "./src/utils/notification";
 import { colors } from "./src/utils";
 
 // ignore warnings
@@ -56,6 +56,9 @@ const toastConfig = {
 };
 
 const App = () => {
+  useEffect(() => {
+    configureNotifications();
+  }, []);
   return (
     <Wrapper>
       <GestureHandlerRootView style={styles.container}>

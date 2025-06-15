@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { useSelector } from "react-redux";
-import LottieView from "lottie-react-native";
 import { RootState } from "../../store";
+import LottieView from "lottie-react-native";
 import Button from "../../components/Button";
 import NavService from "../../helpers/NavService";
 import styles from "./styles";
