@@ -5,6 +5,49 @@ export const TIME1 = "HH:mm";
 let newInstance: any = null;
 
 class Util {
+  getWeatherIconName(weathercode: any): string {
+    switch (weathercode) {
+      case 0:
+        return "weather-sunny";
+      case 1:
+      case 2:
+      case 3:
+        return "weather-partly-cloudy";
+      case 45:
+      case 48:
+        return "weather-fog";
+      case 51:
+      case 53:
+      case 55:
+      case 56:
+      case 57:
+        return "weather-rainy";
+      case 61:
+      case 63:
+      case 65:
+      case 80:
+      case 81:
+      case 82:
+        return "weather-pouring";
+      case 66:
+      case 67:
+        return "weather-snowy-rainy";
+      case 71:
+      case 73:
+      case 75:
+      case 77:
+      case 85:
+      case 86:
+        return "weather-snowy";
+      case 95:
+        return "weather-lightning";
+      case 96:
+      case 99:
+        return "weather-lightning";
+      default:
+        return "weather-cloudy";
+    }
+  }
   reduxStore: any = null;
 
   keyExtractor = (item: any, index: number): string => index.toString();
@@ -209,70 +252,24 @@ class Util {
     }
   };
 
-  getWeatherIconName = (code: number): string => {
-    switch (code) {
-      case 0:
-        return "weather-sunny";
-      case 1:
-        return "weather-partly-cloudy";
-      case 2:
-      case 3:
-        return "weather-cloudy";
-      case 45:
-      case 48:
-        return "weather-fog";
-      case 51:
-      case 53:
-      case 55:
-        return "weather-rainy";
-      case 56:
-      case 57:
-        return "weather-snowy-rainy";
-      case 61:
-      case 63:
-      case 65:
-      case 80:
-      case 81:
-      case 82:
-        return "weather-pouring";
-      case 66:
-      case 67:
-        return "weather-snowy-rainy";
-      case 71:
-      case 73:
-      case 75:
-      case 77:
-      case 85:
-      case 86:
-        return "weather-snowy";
-      case 95:
-        return "weather-lightning";
-      case 96:
-      case 99:
-        return "weather-lightning-rainy";
-      default:
-        return "weather-cloudy";
-    }
-  };
-
-  toFahrenheit = (celsius: number): string => {
-    if (typeof celsius !== "number") return "--";
-    return `${(celsius * 1.8 + 32).toFixed(1)}°F`;
-  };
-
-  getDayMinMaxTemps = (
-    hourlyTemps: number[],
-    hourlyTimes: string[],
-    dayIdx: number
-  ): { min: number | string; max: number | string } => {
-    const start = dayIdx * 24;
-    const end = start + 24;
-    const temps = hourlyTemps.slice(start, end);
-    if (!temps.length) return { min: "--", max: "--" };
-    return {
-      min: Math.min(...temps),
-      max: Math.max(...temps),
-    };
+  getHourlyData = (forecast: any): any[] => {
+    return (
+      forecast?.hourly?.time?.map((time: string, idx: number) => ({
+        time,
+        temperature: forecast.hourly.temperature_2m[idx],
+        feelsLike: forecast.hourly.apparent_temperature[idx],
+        humidity: forecast.hourly.relative_humidity_2m[idx],
+        windspeed: forecast.hourly.windspeed_10m[idx],
+        winddirection: forecast.hourly.winddirection_10m[idx],
+        weathercode: forecast.hourly.weathercode[idx],
+        precipitation: forecast.hourly.precipitation[idx],
+        uvIndex: forecast.hourly.uv_index[idx],
+        cloudcover: forecast.hourly.cloudcover[idx],
+        pressure: forecast.hourly.pressure_msl[idx],
+        dewpoint: forecast.hourly.dewpoint_2m[idx],
+        visibility: forecast.hourly.visibility[idx],
+      })) || []
+    );
   };
 }
 

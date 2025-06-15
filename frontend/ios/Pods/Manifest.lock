@@ -1710,6 +1710,8 @@ PODS:
     - Yoga
   - react-native-geolocation-service (5.3.1):
     - React
+  - react-native-get-random-values (1.11.0):
+    - React-Core
   - react-native-orientation-locker (1.7.0):
     - React-Core
   - react-native-restart (0.0.27):
@@ -2659,6 +2661,7 @@ DEPENDENCIES:
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
+  - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -2797,6 +2800,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/geolocation"
   react-native-geolocation-service:
     :path: "../node_modules/react-native-geolocation-service"
+  react-native-get-random-values:
+    :path: "../node_modules/react-native-get-random-values"
   react-native-orientation-locker:
     :path: "../node_modules/react-native-orientation-locker"
   react-native-restart:
@@ -2929,6 +2934,7 @@ SPEC CHECKSUMS:
   React-microtasksnativemodule: d8568d0485a350c720c061ae835e09fc88c28715
   react-native-geolocation: 742605b1a37809c0d4363eeaf61036842f52460c
   react-native-geolocation-service: 608e1da71a1ac31b4de64d9ef2815f697978c55b
+  react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-orientation-locker: 5819fd23ca89cbac0d736fb4314745f62716d517
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: 6775aa9089fa84b77abd7ebdcf45e224a2a2ad3e

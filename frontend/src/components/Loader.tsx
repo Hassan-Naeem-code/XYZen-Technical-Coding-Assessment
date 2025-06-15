@@ -10,7 +10,8 @@ import {
   UIManager,
   Platform,
 } from "react-native";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 import { size, colors } from "../utils";
 
 const { width, height } = Dimensions.get("screen");
@@ -26,8 +27,8 @@ type LoaderProps = {
 };
 
 const Loader: React.FC<LoaderProps> = ({ color = "white" }) => {
-  // const loader = useSelector((state: any) => state.appReducer?.loader || false);
-  const loader = false; // Placeholder for loader state, replace with actual state management
+  const loader = useSelector((state: RootState) => state.loader.loading);
+  // const loader = false; // Placeholder for loader state, replace with actual state management
 
   React.useEffect(() => {
     if (loader) {
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: size.large,
     fontWeight: "bold",
-    color: colors.white,
+    color: colors.WHITE,
     marginBottom: 10,
   },
   loading: {
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   loadingText: {
-    color: colors.white,
+    color: colors.WHITE,
     marginLeft: 5,
   },
 });

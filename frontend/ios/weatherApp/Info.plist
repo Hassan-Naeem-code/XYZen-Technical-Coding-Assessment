@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>weatherApp</string>
+	<string>WeatherApp</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,9 +34,9 @@
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>This app allow need access to network usage to enable video conferencing</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app to have access to the user's location so that it can display local influencer nearby to them</string>
+	<string>This app to have access to the user's location so that it can fetch weather updates nearby to them</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app to have access to the user's location so that it can display local influencer nearby to them</string>
+	<string>This app to have access to the user's location so that it can fetch weather updates nearby to them</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UIAppFonts</key>

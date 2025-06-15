@@ -1,138 +1,224 @@
-import React from "react";
-import {
-  View,
-  ActivityIndicator,
-  Text,
-  ScrollView,
-  Dimensions,
-} from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Text, ScrollView, RefreshControl, FlatList } from "react-native";
+import LottieView from "lottie-react-native";
+import moment from "moment";
+import { useDispatch, useSelector } from "react-redux";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { LineChart } from "react-native-chart-kit";
-import { useNavigation } from "@react-navigation/native";
-import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useWeather } from "../../hooks/useWeather";
+import { fetchWeather, fetchForecast } from "../../store/slices/weatherSlice";
+import { RootState, AppDispatch } from "../../store";
+import { wp, hp } from "../../utils";
 import styles from "./styles";
 import Utils from "../../utils/Utils";
+import Header from "../../components/Header";
+import NavService from "../../helpers/NavService";
+import { useNavigation } from "@react-navigation/native";
+import GeoCodeServices from "../../services/geocodeService";
 
-const screenWidth = Dimensions.get("window").width;
+const HomeScreen = ({ route }: { route: any }) => {
+  const { latitude, longitude } = route.params || {};
+  const dispatch = useDispatch<AppDispatch>();
+  const navigation = useNavigation();
+  const weather = useSelector((state: RootState) => state.weather.weather);
+  const forecast = useSelector((state: RootState) => state.weather.forecast);
+  const error = useSelector((state: RootState) => state.weather.error);
+  const [refreshing, setRefreshing] = useState(false);
+  const [locationName, setLocationName] = useState<{
+    city: string;
+    state: string;
+  }>({ city: "", state: "" });
 
-type RootStackParamList = {
-  Home: undefined;
-  Details: { weather: any; forecast: any };
-};
+  const onRefresh = () => {
+    setRefreshing(true);
+    fetchWeatherData();
+    setRefreshing(false);
+  };
 
-type HomeScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  "Home"
->;
-
-export default function HomeScreen() {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
-  const { weather, forecast, error } = useWeather(42.498, -83.367);
+  const fetchWeatherData = async () => {
+    if (latitude && longitude) {
+      dispatch(fetchWeather({ lat: latitude, lon: longitude }));
+      dispatch(fetchForecast({ lat: latitude, lon: longitude }));
+      const response = await GeoCodeServices.querySearchLatLon(
+        `lat=${latitude}&lon=${longitude}&format=json&limit=1`
+      );
+      const data = response.data;
+      if (data) {
+        const city =
+          data.address.city || data.address.town || data.address.village || "";
+        const state = data.address.state || "";
+        setLocationName({ city: city || "Unknown", state: state || "Unknown" });
+      } else {
+        console.warn(
+          "Location not found for the given latitude and longitude."
+        );
+        setLocationName({ city: "Unknown", state: "Unknown" });
+      }
+    } else {
+      // Handle case where latitude and longitude are not available
+      console.warn("Latitude and longitude are not available.");
+      setLocationName({ city: "Unknown", state: "Unknown" });
+    }
+  };
+  useEffect(() => {
+    fetchWeatherData();
+  }, []);
 
   if (error) return <Text style={{ color: "red" }}>{error}</Text>;
-  if (!weather || !forecast)
+  if (!weather || !forecast) return null; // Loader is global
+
+  // Render future forecast
+  type ForecastItem = {
+    temperature: number | undefined;
+    weathercode: number;
+    time: string;
+    day?: {
+      avgtemp_c: number;
+      condition: {
+        icon: string;
+      };
+    };
+  };
+
+  const _renderForeCastItem = ({
+    item,
+    index,
+  }: {
+    item: ForecastItem;
+    index: number;
+  }) => {
     return (
-      <ActivityIndicator
-        size="large"
-        color="#FFD700"
-        style={{ flex: 1, marginTop: 100 }}
-      />
-    );
-
-  // Example: Use today's date and city (customize as needed)
-  const city = "New York, US";
-  const today = new Date();
-  const dateStr = `${
-    today.getMonth() + 1
-  }.${today.getDate()} ${today.getFullYear()}`;
-
-  // Prepare data for chart (first 7 days, or fallback to available)
-  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const tempData = forecast?.hourly?.temperature_2m?.slice(0, 7) || [];
-  const precipData = forecast?.hourly?.precipitation?.slice(0, 7) || [];
-
-  console.log("Forecast Data:", weather);
-  return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.city}>
-        {city} / {dateStr}
-      </Text>
-      <Text style={styles.weatherDesc}>
-        <Text style={{ color: "#FFD700", fontSize: 28 }}>
-          {weather.interesting || "Weather"}{" "}
+      <View style={styles.foreCastContainer}>
+        <Text style={styles.foreCastTemp}>
+          {item?.temperature !== undefined
+            ? `${(item?.temperature * 1.8 + 32).toFixed(0)}°F`
+            : "--"}
+          °
         </Text>
-        <Text style={{ color: "#FFD700", fontSize: 28 }}>
-          {Utils.toFahrenheit(weather.temperature)}°
-        </Text>
-      </Text>
-      <View style={styles.iconContainer}>
         <MaterialCommunityIcons
-          name={Utils.getWeatherIconName(weather.weathercode)}
-          size={120}
-          color="#fff"
+          name={Utils.getWeatherIconName(item.weathercode)}
+          size={32}
+          color="#333"
         />
+        <Text style={styles.foreCastDate}>
+          {" "}
+          {moment(item.time).format("hh:mm A")}
+        </Text>
       </View>
-      <View style={{ marginTop: 24 }}>
-        <LineChart
-          data={{
-            labels: days,
-            datasets: [
-              { data: tempData, color: () => "#FFA500" }, // temperature
-              { data: precipData, color: () => "#87CEEB" }, // precipitation
-            ],
-            legend: ["Temp", "Precip"],
-          }}
-          width={screenWidth - 32}
-          height={180}
-          chartConfig={{
-            backgroundGradientFrom: "#556080",
-            backgroundGradientTo: "#556080",
-            color: (opacity = 1) => `rgba(255,255,255,${opacity})`,
-            labelColor: () => "#fff",
-            propsForDots: { r: "4", strokeWidth: "2", stroke: "#fff" },
-          }}
-          bezier
-          style={{ borderRadius: 16 }}
-        />
-      </View>
-      <View style={styles.forecastRow}>
-        {days.map((day, idx) => (
-          <View key={idx} style={styles.dayCol}>
-            <Text style={styles.dayText}>{day}</Text>
-            <MaterialCommunityIcons
-              name={Utils.getWeatherIconName(
-                forecast.hourly?.weather_description
-                  ? forecast.hourly.weather_description[idx]
-                  : weather.interesting // fallback
-              )}
-              size={28}
-              color="#fff"
+    );
+  };
+
+  const hourlyData = Utils.getHourlyData(forecast) || []; // Assuming getHourlyData is a utility function to extract hourly data
+
+  return (
+    <View style={styles.container}>
+      <Header
+        {...navigation}
+        title="Weather"
+        onPressButton={() => NavService.goBack()}
+      />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ flex: 1 }}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => onRefresh()}
+          />
+        }
+      >
+        <View style={styles.dateContainer}>
+          <Text style={styles.dateText}>
+            {moment().format("dddd, DD MMMM")}
+          </Text>
+        </View>
+        <Text style={styles.conditionText}>
+          {locationName !== null
+            ? `${locationName?.city}, ${locationName?.state}`
+            : "--"}
+        </Text>
+        <Text style={styles.tempText}>
+          {weather?.temperature !== undefined
+            ? `${(weather.temperature * 1.8 + 32).toFixed(1)}°F`
+            : "--"}
+        </Text>
+        <View style={styles.summaryContainer}>
+          <Text style={styles.summaryTitle}>Daily Summary</Text>
+          <Text style={styles.summaryText}>
+            {`Now it feels like ${
+              weather?.temperature !== undefined
+                ? `${(weather.temperature * 1.8 + 32).toFixed(1)}°F`
+                : "--"
+            }°`}
+          </Text>
+        </View>
+        <View style={styles.infoContainer}>
+          <View style={{ alignItems: "center", justifyContent: "center" }}>
+            <LottieView
+              autoPlay
+              source={require("../../assets/animation/wind.json")}
+              style={{
+                height: wp(50),
+                width: wp(50),
+              }}
             />
-            <Text style={styles.dateText}>
-              {forecast.hourly?.time?.[idx]?.slice(5, 10) || ""}
-            </Text>
-            {/* <Text style={{ color: "#fff", fontSize: 14, marginTop: 2 }}>
-              {forecast.hourly?.temperature_2m?.[idx] !== undefined
-                ? Utils.toFahrenheit(forecast.hourly.temperature_2m[idx])
+            <Text style={styles.infoMainText}>
+              {weather.windspeed !== undefined
+                ? `${weather.windspeed} Km/h`
                 : "--"}
-            </Text> */}
-            {(() => {
-              const { min, max } = Utils.getDayMinMaxTemps(
-                forecast.hourly.temperature_2m,
-                forecast.hourly.time,
-                idx
-              );
-              return (
-                <Text style={{ color: "#fff", fontSize: 12, marginTop: 2 }}>
-                  {Utils.toFahrenheit(Number(min))} /{" "}
-                  {Utils.toFahrenheit(Number(max))}
-                </Text>
-              );
-            })()}
+            </Text>
+            <Text style={styles.infoText}>Wind</Text>
           </View>
-        ))}
-      </View>
-    </ScrollView>
+          <View style={{ alignItems: "center", justifyContent: "center" }}>
+            <LottieView
+              autoPlay
+              source={require("../../assets/animation/humidity.json")}
+              style={{
+                height: wp(50),
+                width: wp(50),
+              }}
+              resizeMode="cover"
+            />
+            <Text style={styles.infoMainText}>
+              {weather.winddirection !== undefined
+                ? `${weather.winddirection}`
+                : "--"}
+            </Text>
+            <Text style={styles.infoText}>Pressure</Text>
+          </View>
+          <View style={{ alignItems: "center", justifyContent: "center" }}>
+            <LottieView
+              autoPlay
+              source={require("../../assets/animation/eye1.json")}
+              style={{
+                height: wp(50),
+                width: wp(50),
+              }}
+            />
+            <Text style={styles.infoMainText}>
+              {weather.visibility !== undefined
+                ? `${weather.visibility} Km`
+                : "--"}
+            </Text>
+            <Text style={styles.infoText}>Visibility</Text>
+          </View>
+        </View>
+        <View style={styles.summaryContainer}>
+          <Text style={styles.summaryTitle}>Hourly Forecast</Text>
+
+          <FlatList
+            data={hourlyData}
+            renderItem={_renderForeCastItem}
+            horizontal
+            ItemSeparatorComponent={() => {
+              return <View style={{ width: 12 }} />;
+            }}
+            style={{ width: "100%", marginVertical: hp(16) }}
+            showsHorizontalScrollIndicator={false}
+            bounces={false}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
-}
+};
+
+export default HomeScreen;

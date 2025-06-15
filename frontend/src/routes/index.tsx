@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { View, StyleSheet, PermissionsAndroid, Platform } from "react-native";
+import { useDispatch } from "react-redux";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 import GeoLocation from "@react-native-community/geolocation";
 import Geolocation from "react-native-geolocation-service";
 import Orientation from "react-native-orientation-locker";
@@ -8,7 +10,9 @@ import NavService from "../helpers/NavService";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
-import DetailsScreen from "../screens/DetailScreen";
+import LocationScreen from "../screens/LocationScreen";
+import ManualLocation from "../screens/ManualLocation";
+import { setLocation } from "../store/slices/locationSlice";
 
 const Stack = createStackNavigator();
 
@@ -38,9 +42,9 @@ async function requestLocationPermission() {
       fineLocationGranted === PermissionsAndroid.RESULTS.GRANTED &&
       coarseLocationGranted === PermissionsAndroid.RESULTS.GRANTED
     ) {
-      console.log("You can use the location");
+      // console.log("You can use the location");
     } else {
-      console.log("location permission denied");
+      // console.log("location permission denied");
       return;
       // showMessage({
       //   message: 'Error',
@@ -59,27 +63,24 @@ async function requestLocationPermission() {
 
 const MainNavigation = () => {
   const locationTimeout = useRef<NodeJS.Timeout | null>(null);
+  const dispatch = useDispatch();
 
   const locateCurrentPosition = () => {
     Geolocation.getCurrentPosition(
       (position) => {
-        console.log("position.coords.latitude", position?.coords?.latitude);
-        console.log("position.coords.longitude", position?.coords?.longitude);
-        let currentPosition = {
-          latitude: position?.coords?.latitude,
-          longitude: position?.coords?.longitude,
-          // latitude: 29.4581674,
-          // longitude: -98.8440402,
-        };
-        // this?.props?.saveCurrentUserLocation(currentPosition);
+        let latitude = position?.coords?.latitude;
+        let longitude = position?.coords?.longitude;
+        if (latitude && longitude) {
+          dispatch(setLocation({ latitude, longitude }));
+        }
       },
       (err) => {
         console.log(err);
-        let currentPosition = {
-          latitude: 29.4581674,
-          longitude: -98.8440402,
-        };
-        // this?.props?.saveCurrentUserLocation(currentPosition);
+        let latitude = 29.4581674;
+        let longitude = -98.8440402;
+        if (latitude && longitude) {
+          dispatch(setLocation({ latitude, longitude }));
+        }
       },
       {
         enableHighAccuracy: true,
@@ -113,7 +114,7 @@ const MainNavigation = () => {
     >
       <View style={styles.container}>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Location"
           screenOptions={{
             headerShown: false,
             headerTransparent: true,
@@ -123,7 +124,8 @@ const MainNavigation = () => {
           }}
         >
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="ManualLocation" component={ManualLocation} />
+          <Stack.Screen name="Location" component={LocationScreen} />
         </Stack.Navigator>
       </View>
     </NavigationContainer>
@@ -133,6 +135,7 @@ const MainNavigation = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: getStatusBarHeight() * 1.2,
   },
 });
 

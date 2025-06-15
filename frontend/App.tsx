@@ -10,8 +10,8 @@ import {
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import { PersistGate } from "redux-persist/integration/react";
 import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
-// import { Provider } from "react-redux";
-// import store, { persistor } from "./src/redux";
+import { Provider } from "react-redux";
+import store from "./src/store";
 import Loader from "./src/components/Loader";
 import MainNavigation from "./src/routes";
 import ErrorBoundary from "./src/components/ErrorBoundary";
@@ -26,14 +26,14 @@ const toastConfig = {
       {...props}
       text1NumberOfLines={5}
       style={{
-        borderLeftColor: colors.primary,
+        borderLeftColor: colors.YELLOW_COLOR,
         maxHeight: 120,
         height: "100%",
         paddingVertical: 20,
       }}
       text1Style={{
         fontSize: 14,
-        color: colors.black,
+        color: colors.BLACK,
       }}
     />
   ),
@@ -42,14 +42,14 @@ const toastConfig = {
       {...props}
       text1NumberOfLines={5}
       style={{
-        borderLeftColor: colors.red,
+        borderLeftColor: colors.ALERT,
         maxHeight: 120,
         height: "100%",
         paddingVertical: 20,
       }}
       text1Style={{
         fontSize: 14,
-        color: colors.black,
+        color: colors.BLACK,
       }}
     />
   ),
@@ -62,17 +62,15 @@ const App = () => {
         <StatusBar
           translucent={true}
           backgroundColor="transparent"
-          barStyle="light-content"
+          barStyle="dark-content"
         />
-        {/* <Provider store={store}> */}
-        {/* <PersistGate persistor={persistor}> */}
-        <Loader />
-        <ErrorBoundary>
-          <MainNavigation />
-        </ErrorBoundary>
-        <Toast config={toastConfig} />
-        {/* </PersistGate> */}
-        {/* </Provider> */}
+        <Provider store={store}>
+          <Loader />
+          <ErrorBoundary>
+            <MainNavigation />
+          </ErrorBoundary>
+          <Toast config={toastConfig} />
+        </Provider>
       </GestureHandlerRootView>
     </Wrapper>
   );
@@ -105,6 +103,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   containerWhiteBackground: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.YELLOW_COLOR,
   },
 });
