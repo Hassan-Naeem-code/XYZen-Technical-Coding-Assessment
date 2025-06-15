@@ -11,7 +11,7 @@ The app features a user-friendly React Native interface and sends unique iOS not
 
 ```
 .
-├── backend/   # (Optional) Express/Node backend if used as a proxy or for business logic
+├── backend/   # Express/Node backend for API proxy and business logic
 ├── frontend/  # React Native app
 ```
 
@@ -26,9 +26,14 @@ The app features a user-friendly React Native interface and sends unique iOS not
 - **src/utils/notification.ts**: Local notification setup and triggers.
 - **src/assets/**: Lottie animations, icons, etc.
 
-### Backend (Optional)
-- If you have a backend, describe its endpoints and structure here.  
-  (If not, remove this section.)
+### Backend (Node.js/Express/TypeScript)
+- **src/index.ts**: Entry point, sets up the Express server and routes.
+- **src/controllers/weatherController.ts**: Handles fetching current weather and forecasts.
+- **src/routes/weatherRoutes.ts**: Weather-related API endpoints.
+- **src/services/openMeteoService.ts**: Interacts with Open-Meteo API.
+- **package.json**: Backend dependencies and scripts.
+- **tsconfig.json**: TypeScript config for backend.
+- **README.md**: Backend setup and API usage.
 
 ---
 
@@ -48,19 +53,34 @@ The app features a user-friendly React Native interface and sends unique iOS not
 ### 1. Clone the Repository
 
 ```sh
-git clone <your-repo-url>
-cd frontend
+git clone https://github.com/Hassan-Naeem-code/XYZen-Technical-Coding-Assessment
 ```
 
-### 2. Install Dependencies
+---
+
+### 2. Backend Setup
 
 ```sh
+cd backend
+npm install
+npm start
+```
+
+- The backend will run on `http://localhost:5000` by default.
+- Configure environment variables in `backend/.env` if needed.
+
+---
+
+### 3. Frontend Setup
+
+```sh
+cd frontend
 npm install
 # or
 yarn install
 ```
 
-### 3. Set Up Environment Variables
+#### Set Up Environment Variables
 
 Create a `.env` file in the root of `frontend/`:
 
@@ -69,7 +89,7 @@ GEO_API_URL=https://nominatim.openstreetmap.org
 WEATHER_API_URL=https://api.open-meteo.com/v1
 ```
 
-### 4. iOS Setup
+#### iOS Setup
 
 - Install CocoaPods dependencies:
   ```sh
@@ -77,7 +97,7 @@ WEATHER_API_URL=https://api.open-meteo.com/v1
   ```
 - Enable **Push Notifications** and **Background Modes** in Xcode (for notifications).
 
-### 5. Start Metro
+#### Start Metro
 
 ```sh
 npm start
@@ -85,7 +105,7 @@ npm start
 yarn start
 ```
 
-### 6. Run the App
+#### Run the App
 
 - **iOS:**
   ```sh
@@ -125,12 +145,8 @@ The app sends **local iOS notifications** for weather events not covered by the 
 
 ## 🧑‍💻 Tech Stack
 
-- **React Native** (TypeScript)
-- **Redux Toolkit** for state management
-- **Open-Meteo API** for weather data
-- **Nominatim API** for geocoding
-- **Lottie** for animations
-- **react-native-push-notification** for notifications
+- **Frontend:** React Native (TypeScript), Redux Toolkit, Lottie, react-native-push-notification
+- **Backend:** Node.js, Express, TypeScript, Axios
 
 ---
 
@@ -143,7 +159,7 @@ See the demo video in the submission link for a walkthrough of the app and its f
 ## 📝 Assignment Requirements
 
 - [x] React Native UI
-- [x] Backend (Open-Meteo API, optional Node backend)
+- [x] Backend (Open-Meteo API, Node backend)
 - [x] 2+ pages (Home, Manual Location)
 - [x] iOS notifications for unique weather events
 - [x] iPhone emulator support
