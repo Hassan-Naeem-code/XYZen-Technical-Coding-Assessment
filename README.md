@@ -168,7 +168,7 @@ See the demo video in the submission link for a walkthrough of the app and its f
 ---
 
 ## Additional Links
-- GitHub Repository: [Your Repository Link]
+- GitHub Repository: [\[Your Repository Link\]](https://github.com/Hassan-Naeem-code/XYZen-Technical-Coding-Assessment)
 - Demo Video: [Your Demo Video Link]
 
 ---
