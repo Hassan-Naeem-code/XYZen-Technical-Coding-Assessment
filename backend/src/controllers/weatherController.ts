@@ -1,34 +1,42 @@
-import { Request, Response } from 'express';
-import { OpenMeteoService } from '../services/openMeteoService';
-
+import { Request, Response } from "express";
+import WeatherService from "../services/weatherService";
+import { ApiError } from "../utils/error";
+import { WeatherData } from "../types/weather";
+import { ApiResponse } from "../utils/response";
 export default class WeatherController {
-    private openMeteoService: OpenMeteoService;
+  private weatherService: WeatherService;
 
-    constructor() {
-        this.openMeteoService = new OpenMeteoService();
-    }
+  constructor() {
+    this.weatherService = new WeatherService();
+  }
 
-    public async getCurrentWeather(req: Request, res: Response): Promise<void> {
-        try {
-            const { latitude, longitude } = req.query;
-            const lat = Number(latitude);
-            const lon = Number(longitude);
-            const weatherData = await this.openMeteoService.fetchCurrentWeather(lat, lon);
-            res.status(200).json(weatherData);
-        } catch (error) {
-            res.status(500).json({ message: 'Error fetching current weather', error });
-        }
+  async getCurrentWeather(req: Request, res: Response): Promise<void> {
+    // Extract latitude and longitude from query parameters
+    const { lat, lon } = req.query;
+    if (!lat || !lon) throw new ApiError("Missing lat/lon", 400);
+    try {
+      const weather: WeatherData = await this.weatherService.getCurrentWeather(
+        lat as string,
+        lon as string
+      );
+      res.status(200).json(new ApiResponse(weather));
+    } catch (err) {
+      throw new ApiError("Failed to fetch weather", 500);
     }
+  }
 
-    public async getWeatherForecast(req: Request, res: Response): Promise<void> {
-        try {
-            const { latitude, longitude } = req.query;
-            const lat = Number(latitude);
-            const lon = Number(longitude);
-            const forecastData = await this.openMeteoService.fetchWeatherForecast(lat, lon);
-            res.status(200).json(forecastData);
-        } catch (error) {
-            res.status(500).json({ message: 'Error fetching weather forecast', error });
-        }
+  async getWeatherForecast(req: Request, res: Response) {
+    // Extract latitude and longitude from query parameters
+    const { lat, lon } = req.query;
+    if (!lat || !lon) throw new ApiError("Missing lat/lon", 400);
+    try {
+      const forecast = await this.weatherService.getWeatherForecast(
+        lat as string,
+        lon as string
+      );
+      res.status(200).json(new ApiResponse(forecast));
+    } catch (err) {
+      throw new ApiError("Failed to fetch weather", 500);
     }
+  }
 }

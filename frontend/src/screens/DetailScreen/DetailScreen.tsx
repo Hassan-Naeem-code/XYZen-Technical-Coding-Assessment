@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 
 export default function DetailsScreen({ route }: any) {
-  const { weather } = route.params;
+  const { weather, forecast } = route.params;
   return (
     <View>
       <Text>Temperature: {weather.temperature}°C</Text>

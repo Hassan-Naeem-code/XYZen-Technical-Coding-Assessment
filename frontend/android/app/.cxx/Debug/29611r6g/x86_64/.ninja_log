@@ -1,13 +1,12 @@
 # ninja log v5
-0	4	0	clean	ac3c63ba023e959c
-1137	1182	1749919433732488449	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/intermediates/cxx/Debug/29611r6g/obj/x86_64/libappmodules.so	458a1aead8e1ac10
-0	1039	1749919433585030555	CMakeFiles/appmodules.dir/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	5dccaac88ed65095
+6	107	1749952197784711699	build.ninja	8f515e5eecd6d7b3
+0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
 0	1137	1749919433683359318	CMakeFiles/appmodules.dir/OnLoad.cpp.o	548b3c7ce7f43854
-0	6	1749921079789692000	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
-6	107	1749921079885332648	build.ninja	8f515e5eecd6d7b3
-0	6	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
+0	1039	1749919433585030555	CMakeFiles/appmodules.dir/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	5dccaac88ed65095
+1137	1182	1749919433732488449	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/intermediates/cxx/Debug/29611r6g/obj/x86_64/libappmodules.so	458a1aead8e1ac10
+0	4	0	clean	ac3c63ba023e959c
+7	115	1749952197784711699	build.ninja	8f515e5eecd6d7b3
+1	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
+0	4	0	clean	ac3c63ba023e959c
+0	7	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
 0	3	0	clean	ac3c63ba023e959c
-0	6	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
-0	4	0	clean	ac3c63ba023e959c
-0	6	0	/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/x86_64/CMakeFiles/cmake.verify_globs	abcd2b675151c693
-0	4	0	clean	ac3c63ba023e959c

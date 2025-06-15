@@ -1,10 +1,25 @@
-import { Router } from 'express';
-import WeatherController from '../controllers/weatherController';
+import WeatherController from "../controllers/weatherController";
+import { z } from "zod";
+import { requireLatLon, validateQuery } from "../middleware/validateRequest";
 
-const router = Router();
 const weatherController = new WeatherController();
 
-export function setWeatherRoutes(app: Router) {
-    app.get('/api/weather/current', weatherController.getCurrentWeather.bind(weatherController));
-    app.get('/api/weather/forecast', weatherController.getWeatherForecast.bind(weatherController));
+const weatherQuerySchema = z.object({
+  lat: z.string().min(1),
+  lon: z.string().min(1),
+});
+
+export function setWeatherRoutes(app: any) {
+  app.get(
+    "/api/weather/current",
+    requireLatLon,
+    validateQuery(weatherQuerySchema),
+    weatherController.getCurrentWeather.bind(weatherController)
+  );
+  app.get(
+    "/api/weather/forecast",
+    requireLatLon,
+    validateQuery(weatherQuerySchema),
+    weatherController.getWeatherForecast.bind(weatherController)
+  );
 }
