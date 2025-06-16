@@ -27,11 +27,11 @@ The Weather Assistant App backend is a robust, enterprise-grade REST API built w
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/weather-assistant-app.git
+   git clone https://github.com/Hassan-Naeem-code/XYZen-Technical-Coding-Assessment
    ```
 2. Navigate to the backend directory:
    ```sh
-   cd weather-assistant-app/backend
+   cd XYZen-Technical-Coding-Assessment/backend
    ```
 3. Install the dependencies:
    ```sh

@@ -21,8 +21,8 @@ It fetches live weather data from the [Open-Meteo API](https://open-meteo.com/) 
 ### 1. **Clone the Repository**
 
 ```sh
-git clone <your-repo-url>
-cd frontend
+git clone https://github.com/Hassan-Naeem-code/XYZen-Technical-Coding-Assessment
+cd XYZen-Technical-Coding-Assessment/frontend
 ```
 
 ### 2. **Install Dependencies**
