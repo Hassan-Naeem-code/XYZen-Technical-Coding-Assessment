@@ -5,6 +5,266 @@ cmake_policy(SET CMP0009 NEW)
 # input_SRC at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake:55 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/*.cpp")
 set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/RNCGeolocationSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/lottiereactnative-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/react/renderer/components/lottiereactnative/lottiereactnativeJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/rngesturehandler_codegen-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/react/renderer/components/rngesturehandler_codegen/rngesturehandler_codegenJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/rnreanimated-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/react/renderer/components/rnreanimated/rnreanimatedJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:22 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/*.cpp")
+set(OLD_GLOB
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:22 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../../common/cpp/react/renderer/components/safeareacontext/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../../common/cpp/react/renderer/components/safeareacontext/RNCSafeAreaViewShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../../common/cpp/react/renderer/components/safeareacontext/RNCSafeAreaViewState.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CODEGEN_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:23 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/safeareacontext-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CODEGEN_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt:23 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-safe-area-context/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/safeareacontext/safeareacontextJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt:23 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/rnscreens.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt:23 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSFullWindowOverlayShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSModalScreenShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderConfigShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderConfigState.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderSubviewShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenStackHeaderSubviewState.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/RNSScreenState.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CUSTOM_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt:23 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnscreens/utils/*.cpp")
+set(OLD_GLOB
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# LIB_CODEGEN_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt:24 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-screens/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnscreens/rnscreensJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# rnsvg_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:25 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/rnsvg.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# rnsvg_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:25 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGImageShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGImageState.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGShadowNodes.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# rnsvg_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:26 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/*cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/States.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/rnsvgJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/RNVectorIconsSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/android/app/.cxx/Debug/29611r6g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/*.cpp")
+set(OLD_GLOB
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/ComponentDescriptors.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/EventEmitters.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/Props.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/RNVectorIconsSpecJSI-generated.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/ShadowNodes.cpp"
+  "/Users/muhammadhassannaeem/Desktop/XYZen-Technical-Coding-Assessment/frontend/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/react/renderer/components/RNVectorIconsSpec/States.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

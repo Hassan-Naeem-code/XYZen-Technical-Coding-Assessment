@@ -174,4 +174,4 @@ See the demo video in the submission link for a walkthrough of the app and its f
 ---
 
 ## License
-This project is licensed under the MIT License.
+This project is for educational/demo purposes.

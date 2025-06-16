@@ -1,5 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { View, Text, ScrollView, RefreshControl, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  RefreshControl,
+  FlatList,
+  NativeModules,
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Toast from "react-native-toast-message";
@@ -62,6 +69,8 @@ const HomeScreen = ({ route }: { route: any }) => {
   };
   useEffect(() => {
     fetchWeatherData();
+    const iosBackgroundLocation = NativeModules?.BackgroundLocationModule;
+    iosBackgroundLocation?.fetchDeviceCurrentLiveLocation("dskjcbdjsh");
   }, []);
 
   useEffect(() => {

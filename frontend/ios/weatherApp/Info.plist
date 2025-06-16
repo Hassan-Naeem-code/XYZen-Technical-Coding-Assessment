@@ -37,6 +37,8 @@
 	<string>This app to have access to the user's location so that it can fetch weather updates nearby to them</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app to have access to the user's location so that it can fetch weather updates nearby to them</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app to have access to the user's location so that it can fetch weather updates nearby to them</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UIAppFonts</key>
@@ -60,6 +62,13 @@
 		<string>Poppins-Bold.ttf</string>
 		<string>Poppins-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>remote-notification</string>
+		<string>fetch</string>
+		<string>processing</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
