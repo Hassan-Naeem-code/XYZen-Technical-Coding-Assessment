@@ -67,21 +67,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCTBridgeDelegate {
   }
 
   private func postDataOnServer(token: String, lat: String, long: String) {
-    let urlString = "https://webservices.takechargemobile.app:3000/api/background-location"
+    let urlString = "http://localhost:4000/api/weather/current?lat=\(lat)&long=\(long)"
     guard let serviceUrl = URL(string: urlString) else { return }
-    let parameterDictionary = ["lat": lat, "long": long]
+    // let parameterDictionary = ["lat": lat, "long": long]
     var request = URLRequest(url: serviceUrl)
-    request.httpMethod = "POST"
+    request.httpMethod = "GET"
     request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
     print(parameterDictionary)
-    print(token)
-
-    guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-      return
-    }
-    request.httpBody = httpBody
 
     let session = URLSession.shared
     session.dataTask(with: request) { (data, response, error) in
@@ -92,6 +85,96 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RCTBridgeDelegate {
         do {
           let json = try JSONSerialization.jsonObject(with: data, options: [])
           print(json)
+          if (json.data.windspeed > 40) {
+              DispatchQueue.main.async {
+                          let center = UNUserNotificationCenter.current()
+                          let content = UNMutableNotificationContent()
+                          content.title = "High Wind Alert!"
+                          content.body = "Wind speed is \(json.data.windspeed) Km/h. Stay safe!"
+                          content.sound = .default
+
+                          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                          let uuid = UUID().uuidString
+                          let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+                          center.add(request) { error in
+                              if let error = error {
+                                  print("Notification error: \(error)")
+                              }
+                          }
+                      }
+          }
+          if (json.data.visibility < 2) {
+DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "Low Visibility Alert!"
+            content.body = "Visibility is only \(json.data.visibility) Km. Drive carefully!"
+            content.sound = .default
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+            let uuid = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            center.add(request) { error in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        }
+          }
+          if (json.data.temperature >= 40) {
+DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "Extreme Heat Alert!"
+            content.body = "Temperature is \(json.data.temperature)}. Stay hydrated!"
+            content.sound = .default
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+            let uuid = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            center.add(request) { error in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        }
+          }
+          if (json.data.temperature <= 0) {
+DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "Freezing Temperature Alert!"
+            content.body = "Temperature is \(json.data.temperature). Dress warmly!"
+            content.sound = .default
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+            let uuid = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            center.add(request) { error in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        }
+          }
+          if (json.data.uvIndex >= 8) {
+DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "High UV Index!"
+            content.body = "UV Index is \(json.data.uvIndex). Wear sunscreen and avoid direct sunlight!"
+            content.sound = .default
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+            let uuid = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+            center.add(request) { error in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        }
+          }
         } catch {
           print(error)
         }
